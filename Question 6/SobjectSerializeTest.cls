@@ -1,5 +1,5 @@
 @isTest
-public class SobjectSerialize {
+public class SobjectSerializeTest {
     @isTest
     public static void methodForTest() {
     
