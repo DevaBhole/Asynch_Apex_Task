@@ -29,6 +29,6 @@ global class ExternalAPICallout implements Database.Batchable<SObject>, Database
     }
 
     global void finish(Database.BatchableContext BC) {
-        // Do any cleanup here
+       
     }
 }
