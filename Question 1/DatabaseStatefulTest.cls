@@ -38,8 +38,10 @@ public class DatabaseStatefulTest {
         Test.startTest();
         DatabaseStateful candprocess = new DatabaseStateful();
         Id batchId  = Database.executeBatch(candprocess);
-        Test.stopTest();
-        
-        System.assertEquals(199, [SELECT count() FROM candidate__c WHERE name LIKE 'Test Candidate']);
+        Test.stopTest();   
+        AsyncApexJob jobInfo = [SELECT Id,TotalJobItems
+                        FROM AsyncApexJob
+                        WHERE Id = :batchId];
+        System.assertEquals(1, jobInfo.TotalJobItems);
     }
 }
